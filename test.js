@@ -2,8 +2,47 @@ cp = require("./colorplus.js");
 
 for (key in cp.color_def)
 {
-	var tmp = "[" + key + "]";
-	while(tmp.length < 9) tmp += " ";
-	console.log(cp[key] + tmp + cp.r);
-	console.log(cp["H" + key] + tmp + cp.r);
+	var buf = "";
+	var color = "[" + key + "]";
+	while(color.length < 9) color += " ";
+
+	for (key2 in cp.color_def)
+	{
+		buf += cp[key] + cp["bg" + key2] + color + cp.r;
+	}
+	buf += "\n";
+
+
+	for (key2 in cp.color_def)
+	{
+		buf += cp["H" + key] + cp["bg" + key2] + color + cp.r;
+	}
+	console.log(buf);
+
+
 }
+
+// for (key in cp.color_def)
+// {
+// 	var buf = "";
+// 	var color = "[" + key + "]";
+// 	while(color.length < 9) color += " ";
+
+// 	for (key2 in cp.color_def)
+// 	{
+// 		buf += cp.C(0, cp.color_def[key], cp.color_def[key2]) + color + cp.r;
+// 	}
+// 	buf += "\n";
+
+
+// 	for (key2 in cp.color_def)
+// 	{
+// 		buf += cp.C(1, cp.color_def[key], cp.color_def[key2]) + color + cp.r;
+
+// 	}
+// 	console.log(buf);
+
+// }
+
+
+// console.log(cp.e + "[33mdfdf" + cp.e + "[1;33;41masdfasdf");
