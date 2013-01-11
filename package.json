@@ -1,0 +1,28 @@
+{
+  "name": "colorplus",
+  "version": "0.1.0",
+  "author": "PG <smartPG@gmail.com>",
+  "description": "A painless way to color your console in node.js",
+
+  "main": "./colorplus.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:itsPG/colorplus.js.git"
+  },
+  "keywords": [
+    "color",
+    "plus",
+    "console",
+    "ansi"
+  ],
+
+  "devDependencies": {
+    "vows"    :  "0.5.x",
+    "request" :  "2.1.x"
+  },
+  
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
