@@ -21,7 +21,7 @@ module.exports = (function()
 		if (color) tmp += ";3" + color;
 		if (bgcolor) tmp += ";4" + bgcolor;
 		tmp += "m";
-		console.log(tmp);	
+		//console.log(tmp);	
 		return esc + tmp;
 	}
 	var r = 
@@ -42,8 +42,8 @@ module.exports = (function()
 	
 	for (key in color_def)
 	{
-		r[key] = ansi_color(0, color_def[key]);
-		r["H" + key] = ansi_color(1, color_def[key]);
+		r[key] = ansi_color(1, color_def[key]);
+		r["D" + key] = ansi_color(0, color_def[key]);
 		r["bg" + key] = ansi_color(1, 0, color_def[key]);
 	}
 
