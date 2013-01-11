@@ -23,6 +23,7 @@ module.exports = (function()
 	}
 	var r = 
 	{
+		color_def:color_def,
 		apply_to_string:function(attr_name, func)
 		{
 			Object.defineProperty(String.prototype, attr_name, {get:func});

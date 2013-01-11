@@ -1,4 +1,9 @@
-a = require("./colorplus.js");
-console.log(a.red, "123123", a.reset, "456");
-console.log(a.C(1, 3, 4), "test", a.r);
-console.log(a["red"], "ttt");
+cp = require("./colorplus.js");
+
+for (key in cp.color_def)
+{
+	var tmp = "[" + key + "]";
+	while(tmp.length < 9) tmp += " ";
+	console.log(cp[key] + tmp + cp.r);
+	console.log(cp["H" + key] + tmp + cp.r);
+}
