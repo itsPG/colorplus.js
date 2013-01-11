@@ -15,11 +15,6 @@
     "console",
     "ansi"
   ],
-
-  "devDependencies": {
-    "vows"    :  "0.5.x",
-    "request" :  "2.1.x"
-  },
   
   "license": "MIT",
   "engines": {
