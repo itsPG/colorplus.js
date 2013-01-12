@@ -4,7 +4,7 @@ ColorPlus.js
 A painless way to color your console in node.js.
 -----------------------------------------------
 
-
+![screenshot](https://raw.github.com/itsPG/colorplus.js/master/screenshot.jpg)
 
 To Install
 ==========
@@ -15,12 +15,21 @@ To Install
 To Use
 ======
 
+	var cp = require("colorplus");
+	cp.enable();
+
+	console.log("Welcome".green, "To".bggreen, "Color".yellow, "Plus".red, "modules".bgblue.cyan);
+
+
+Examples in detail
+=================
+
 If you don't want **colorplus** adds attributes to your String :
 
 	var cp = require("colorplus");
 	console.log("This is", cp.yellow, "Color", cp.red, "Plus", cp.r, "Test");
 
-Let **colorplus** add! So you may use **colorplus** in both ways:
+Setup **colorplus** in normal way. So you may use **colorplus** in both ways:
 
 	var cp = require("colorplus");
 	cp.enable(); // enable string attributes.

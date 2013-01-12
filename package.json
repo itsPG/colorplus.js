@@ -1,6 +1,6 @@
 {
   "name": "colorplus",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "PG <smartPG@gmail.com>",
   "description": "A painless way to color your console in node.js",
 
