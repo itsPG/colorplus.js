@@ -1,25 +1,33 @@
 cp = require("./colorplus.js");
+cp.enable();
+console.log(String("test").red.bgyellow);
+console.log(String("test").bgyellow);
 
-for (key in cp.color_def)
+//cp.enable();
+
+if (1)
 {
-	var buf = "";
-	var color = "[" + key + "]";
-	while(color.length < 9) color += " ";
-
-	for (key2 in cp.color_def)
+	for (key in cp.color_def)
 	{
-		buf += cp[key] + cp["bg" + key2] + color + cp.r;
+		var buf = "";
+		var color = "[" + key + "]";
+		while(color.length < 9) color += " ";
+
+		for (key2 in cp.color_def)
+		{
+			buf += cp[key] + cp["bg" + key2] + color + cp.r;
+		}
+		buf += "\n";
+
+
+		for (key2 in cp.color_def)
+		{
+			buf += cp["D" + key] + cp["bg" + key2] + color + cp.r;
+		}
+		console.log(buf);
+
+
 	}
-	buf += "\n";
-
-
-	for (key2 in cp.color_def)
-	{
-		buf += cp["H" + key] + cp["bg" + key2] + color + cp.r;
-	}
-	console.log(buf);
-
-
 }
 
 // for (key in cp.color_def)
