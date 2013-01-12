@@ -27,9 +27,40 @@ module.exports = (function()
 	var r = 
 	{
 		color_def:color_def,
-		apply_to_string:function(attr_name, func)
+		apply_to_string:function(attr_name)
 		{
-			Object.defineProperty(String.prototype, attr_name, {get:func});
+
+			Object.defineProperty(String.prototype, attr_name,
+			{
+				get:function()
+				{
+					//console.log(attr_name);
+					return ansi_color(1, color_def[attr_name]) + this + "\u001b[0m";
+				}
+			});
+
+			bg_name = "bg" + attr_name;
+
+			Object.defineProperty(String.prototype, bg_name,
+			{
+				get:function()
+				{
+					//console.log(attr_name);
+					return ansi_color(1, 0, color_def[attr_name]) + this + "\u001b[0m";
+				}
+			});
+			
+		},
+		enable:function()
+		{
+			if (this.enable_flag) return;
+
+			enable_flag = 1;
+			for (key in color_def)
+			{
+				this.apply_to_string(key);
+			}
+
 		},
 		C:function(highlight, color, bgcolor)
 		{
@@ -38,6 +69,8 @@ module.exports = (function()
 		reset:esc + "[0m",
 		r:esc + "[0m",
 		e:esc,
+		self:this,
+		enable_flag:false,
 	}
 	
 	for (key in color_def)
