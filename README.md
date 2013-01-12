@@ -4,11 +4,13 @@ ColorPlus.js
 A painless way to color your console in node.js.
 -----------------------------------------------
 
-![screenshot](https://raw.github.com/itsPG/colorplus.js/master/screenshot.jpg)
+Colorplus.js is a lazy option for those who want to print colored logs without learnning any other lib.
+
 
 To Install
 ==========
 
+Type
 `npm install colorplus`
 
 
@@ -21,47 +23,59 @@ To Use
 	console.log("Welcome".green, "To".bggreen, "Color".yellow, "Plus".red, "modules".bgblue.cyan);
 
 
-Examples in detail
-=================
+Demo
+====
 
-If you don't want **colorplus** adds attributes to your String :
+![screenshot](https://raw.github.com/itsPG/colorplus.js/master/screenshot.jpg)
 
-	var cp = require("colorplus");
-	console.log("This is", cp.yellow, "Color", cp.red, "Plus", cp.r, "Test");
+--------------------------------------------------------------------------------------------------------------
 
-Setup **colorplus** in normal way. So you may use **colorplus** in both ways:
 
-	var cp = require("colorplus");
-	cp.enable(); // enable string attributes.
+Examples
+============
 
-	// methoud 1:
-	console.log("This is", cp.yellow, "Color", cp.red, "Plus", cp.r, "Test");
-    // methoud 2:
+Setup
+-----
+
+	require("colorplus").enable();
 	console.log("This is ", "Color".red, "Plus".yellow, "Test");
 
-You may also change the background color by prefix "bg"
 
-	// methoud 1:
-	console.log(cp.bggreen, "Background", cp.bgcyan, "color", cp.bgyellow, "test", cp.r);
-	// methoud 2:
+Usage 
+-----
+
+Change the background color by prefix "bg"
+
 	console.log("Background".bggreen, "color".bgcyan, "test".bgyellow);
 
 Use operator+ to avoid extra spaces in console.log
 
-	// methoud 1:
-	console.log(cp.bggreen + "Background" + cp.bgcyan + "color" + cp.bgyellow + "test" + cp.r);
-	// methoud 2:
 	console.log("Background".bggreen + "color".bgcyan + "test".bgyellow);
 
 Mix color and bgcolor
 
-	// methoud 1:
-	console.log(cp.bgred, cp.yellow, " ~ WARNING COLOR ~", cp.r);
-	// methoud 2:
 	console.log(" ~ WARNING COLOR ~".bgred.yellow);
 
+You may use colorplus.js to produce ansi color code.
+
+	var cp = require("colorplus").enable();
+	console.log(cp.bggreen, "Background", cp.bgcyan, "color", cp.bgyellow, "test", cp.r);
+	console.log(cp.bggreen + "Background" + cp.bgcyan + "color" + cp.bgyellow + "test" + cp.r);
+	console.log(cp.bgred, cp.yellow, " ~ WARNING COLOR ~", cp.r);
 
 
+Do not modify String.prototype
+------------------------------
+
+Only when you don't want **colorplus** adds attributes to your String :
+
+	var cp = require("colorplus");
+	console.log("This is", cp.yellow, "Color", cp.red, "Plus", cp.r, "Test");
+
+Color List
+==========
+
+![screenshot](https://raw.github.com/itsPG/colorplus.js/master/colordemo.jpg)
 
 
 License
