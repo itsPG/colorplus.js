@@ -12,7 +12,7 @@ module.exports = (function()
 
 	var esc = "\u001b";
 
-	function ansi_color(highlight, color, bgcolor, debug_flag)
+	function ansi_color(highlight, color, bgcolor)
 	{
 		
 		var tmp = "[";
@@ -39,7 +39,7 @@ module.exports = (function()
 				}
 			});
 
-			bg_name = "bg" + attr_name;
+			var bg_name = "bg" + attr_name;
 
 			Object.defineProperty(String.prototype, bg_name,
 			{
@@ -55,7 +55,7 @@ module.exports = (function()
 		{
 			if (this.enable_flag) return;
 
-			enable_flag = 1;
+			this.enable_flag = 1;
 			for (key in color_def)
 			{
 				this.apply_to_string(key);

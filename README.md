@@ -6,11 +6,12 @@ A painless way to color your console in node.js.
 
 Colorplus.js is a lazy option for those who want to print colored logs without learnning any other lib.
 
+[Colorplus in github](https://github.com/itsPG/colorplus.js)
+
 
 To Install
 ==========
 
-Type
 `npm install colorplus`
 
 
@@ -64,8 +65,8 @@ You may use colorplus.js to produce ansi color code.
 	console.log(cp.bgred, cp.yellow, " ~ WARNING COLOR ~", cp.r);
 
 
-Do not modify String.prototype
-------------------------------
+Setup without modifying String.prototype
+----------------------------------------
 
 Only when you don't want **colorplus** adds attributes to your String :
 
@@ -89,8 +90,11 @@ This project is distributed under the MIT License.
 Todo list
 =========
 
-(Done) I'm planning to apply the function to String.prototype.
+* (Done) I'm planning to apply the function to String.prototype.
 So you may use String("test").red to color it.
+* DarkColor (document not ready yet)
+* CustomCode (document not ready yet)
+
 
 Feel free to improve this module by give me suggestion or pull requests. 
 
