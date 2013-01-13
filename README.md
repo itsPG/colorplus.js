@@ -18,8 +18,7 @@ To Install
 To Use
 ======
 
-	var cp = require("colorplus");
-	cp.enable();
+	require("colorplus").enable();
 
 	console.log("Welcome".green, "To".bggreen, "Color".yellow, "Plus".red, "modules".bgblue.cyan);
 
